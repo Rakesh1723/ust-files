@@ -1,0 +1,872 @@
+D1
+-->stackroot(training) 
+website for java :baeldung 
+java se
+javs ee
+db
+sb
+microservices
+docker
+aws
+react/ang
+-->
+Agile(flex) --sprint(1/2 weeks)
+sdlc
+Daily standup
+1.what we do yesterday?
+2.whar are we going to do today?
+3.any challenges?
+
+4ls
+-loved
+-loathed/lacked
+-learned
+-longed for
+
+Dev Setup
+
+JDK 21
+intellij, vscode
+git
+mysql, sql
+node js
+
+------git------
+-github/bitbucket/gitlab/code commit
+--ssh,https are 2 ways to connect git lab
+--coursera atlaseian
+
+https password:MubSVqA2SrGkFtdV_ng2(gittoken)
+--git clone
+--git init
+--git add
+--git remote origin "file"
+--git commit -m "msg"
+--git restore --staged filename 
+--git status
+--git branch
+--git pull
+--git push(merge conflict(pull & push)) 1.different 2.same 
+merge with rebase (loose previous history)-- merging the base to new master base
+---------------------------------------------------------------------------------------
+D2
+--->java 
+Akshay sainy(Namasthe javascript)
+Java brains, Official Java Channel - Java
+IBM YT Channel - Gen AI
+Traverse Media - Frontend
+TechWorld with Nana - Devops
+Project Mangement - Google Coursera
+Stephane Maarek AWS - Udemy
+
+Java FSD ---
+
+Backend -
+java/Dotnet/PHP/Python/JavaScript
+Spring Framework/Django/Express JS(node js-compi)
+MySQL/Postgres/MongoDB
+kafka
+
+Frontend-
+HTML,CSS,JavaScript
+Bootstrap/Tailwind
+Angular, React
+
+DevOps-
+Git
+Maven/NPM
+Jenkins
+SonarQube
+Cloud - AWS/Azure/GCP
+Docker,Kubernetes
+Terraform
+Ansible
+
+Project Management -
+Jira
+
+Naming Standard (Conventions) --->
+Variables/methods - camelCasing (starts with lowercase) --> firstName, nextLine()
+class/interface/record names - PascalCase --> Scanner
+package - lowercase --> import java.util.*
+constants/enums - UPPERCASE --> MAXVALUE
+---------------------------------------------------------------------------------------
+D3(1.oops -type* ,2.emp --interface*)
+--->oops(programming methodology deals with class and object)
+program runs on RAM
+
+stack area              heap area
+----------              ---------
+main                    new allocates dynamic space at heap
+person1(obj)    ----->  name, age, location.
+
+
+Encapsulation(combining members and methods) access modifiers -- setters and getters
+Abstraction(incomplete) --abstract class(for classes),interface(for functionality, doesn't have objects).*
+Inheritance(single, multilevel, hierarchy)
+Polymorphism
+--overloading(static/compile time -- depends on type)
+--overriding(dynamic/run time -- depends on value)
+
+
+private(within class)
+public(any where)
+protected(package, subclasses)
+default(within package)
+
+packages are used for grouping similar things.
+this.getClass().getSimpleName() -- to get class properties.(reflection has access to all modifiers)
+final class -- (complete) opposite to abstract and cannot override.
+Interface -- cannot create object, by default all methods are abstract and members are final.
+----------------------------------------------------------------------------------------------
+D4
+
+-Random class(rand.nextInt(bound value))
+-Enum(it has fix the values, allows only choose those values)
+-Arrays(single, multi, jacked)
+-strings are immutable(strip() same as trim ,mutable are stringBuilder(fast performance) , stringBuffer(thread safe -- each acess only one single thread at a time))
+concat doesn't modify original string but, it returns new one . Whereas  append modify the string. 
+
+--ecommerce application*
+
+             dto/model      dto/model          dto/model   
+ presentation(controller) ------->service(business)------->repository(DAO)--------->database
+
+   layer               layer           layer
+
+DTO-Data transfer object*
+model*
+ 
+----------------------------------------------------------------------------------------------
+D5(git merging and rebasing) association vs Aggregation vs composition inner class(3)
+Interface---(used for--
+-loose coupling*
+-light weight
+-multiple inheritance
+
+java follows only call by value not call by reference
+----------------------------------------------------------------------------------------------
+D6
+--->Exception Handling(way to handle abnormal situation)
+1.checked exp 2. unchecked exp(we can handle/avoid)
+try, catch, throw(used to throw an exception intentionally),throws(only for checked exp and don't need to handle, throws followed by class name)*
+
+exception handling wrt method Overriding
+--when super method doesn't throw exception then child method cannot throw any checked exception but it can throw unchecked exp.
+--when super method throws exception  if unchecked no worries , if it is checked exp then child cannot throw super type exp but throw sub type exp.
+--unchecked exception doesn't need to declare method as throws exp but for checked it is must.
+------------------------------------------------------------------------------------------------
+D7
+--->collections
+// generics(one class works on different datatypes) are compile time. left declare is consider as compile time and right is consider as runtime.
+
+Iterable
+   |
+Collection
+
+list(interface) - ordered collection, allows duplicates, uses index.
+Set(equals & hashcode)-unordered collection, doesn't allow duplicate.
+Collections.sort(al)-->works for only comparable (compareTo) implemented classes/comparable classes. comparable only for user defined classes. comparator(compare).
+-------------------------------------------------------------------------------------------------
+D8
+---->
+Stack, Queue, Map
+-------------------------------------------------------------------------------------------------
+D9
+--->java 8(todo comparator , ecommerce)
+static and default methods
+lambda exp
+inner classes (annonomous class)*
+functional interfaces(consumer interface)
+lambda exp allows functional programing by passing function to a function , but indirectly it passes object.
+lambda exp are written for interface consists of one method.
+stream api(only once process through pipeline with same stream)
+--stream methods are intermediate and terminate . intermediate methods are lazy methods(they don't work until terminate stmt.) these are optimized methods. 
+--filter, map, reduce, get, peek,dropwhile,mapToDouble(double stream interface contains avg,sum..fun) and another map (stream of double) it's generic type is double so no sum,avg methods. )
+->String.join(delim,str),compareTo methods
+--------------------------------------------------------------------------------------------------
+D10
+--->
+optional  classes - if no element is present it throws no such element exception.*
+imperative(what and how things done (loops)) vs declarative (what to do (streams) less on logic more on syntax)
+method references(short hand of lambda exp) 4 types.
+--------------------------------------------------------------------------------------------------
+D11
+---->
+maven
+--built in tool
+--dependency management
+--project structure
+--plugins
+
+Testing
+unit testing
+Integration testing
+E2E testing
+
+testing annotations and mokito*
+@DisabledOnJre(JRE.JAVA_21)
+@EnabledOnJre()
+BeforeEach
+AfterEach
+
+--------------------------------------------------------------------------------------------------
+D12
+--->Multi Threading
+thread is a unit of process.
+java -- multi thread where js is single thread.
+thread with low priority is called demon thread .(runs at background)
+
+thread life cycle
+  
+            New  -- new Thread()
+
+             | start() --scheduling the thread
+
+         Runnable <---->  Running
+         ^   |
+notify() | | | sleep()
+sleep        | wait() -- interthread communication
+completess     
+yield()      |
+-- giving 
+chance     Blocked      
+to          
+another    Dead (from all states)
+Synchronization (one after another) non asynchronize (at a time all)
+inter communication(wait,notify)*
+-------------------------------------------------------------------------------------------------
+D13
+--->file Handling
+Byte stream   range (-128 , 127)
+character stream
+NIO non blocking input output(object)
+
+blocking(syn only) vs non blocking(syn or asyn) 
+reactive approach is asyn non blocking (spring web flux)
+serialization, deserialization, transient(to avoid serialization)
+marker interface(no methods)
+--------------------------------------------------------------------------------------------------
+D14
+--->SonarQube (code quality testing)
+--->Regular Expression
+--->java 11 LTS features 
+    --jshell(java code on cmd)
+    --garbage collector improvements
+    --var(based on assigning data type referred but not dynamic) 
+    --http client api
+--->java 12
+   --switch expression
+   --ZonedDateapi
+--->java 13
+    --text block("""   """)
+    --(;;)
+    --String.lines()
+    
+-->java 14 
+   --pattern match
+   --records(it consist of all  default getters , constructor, hash code ,equals are no need to implement )records are immutable, doesn't extend class but implements interface, record can contains another record ,
+   --sealed classes
+--->java 17 LTS
+   --switch exp
+   --sealed classes(only the permits classes are extend the sealed class and the permit class is non-sealed or  final to stop sealed chain)
+   --pattern matching
+--------------------------------------------------------------------------------------------------------
+D15
+-->
+System.gc() is a demon thread used to collect garbage collector.
+--------------------------------------------------------------------------------------------------------
+D16
+--->SQL
+Database 
+dbms-(RDBMS ,non RDMS)
+
+RDMS(MySQL, oracle, sqlserver, postgres)
+No-sql (mongodb ,aws DynamoDB)
+
+SQL(structured query language)
+ddl-create,alter,truncate,drop
+dml-insert,delete,update
+dql-select
+dcl-grant,revoke
+tcl-commit,rollback,savepoint
+
+mysql-oracle
+mssql(sql server) -Microsoft
+postgres
+---------------------------------------------------------------------------------------------------------
+D17
+
+constrains
+--not null
+--unique
+--primary key
+--default
+--check
+--foreign key
+
+--union,intersection(Combines the results of two or more SELECT queries into a single result set) are applied on queries(to join) consist of same data
+ but joins are used to combine tables.
+
+joins
+--inner join
+--outer join(left,right,full)
+--cross join
+--self  join
+
+--nested queries
+--corelated queries.
+------------------------------------------------------------------------------------------------------------
+D18
+Normalization* --  to avoid redundancy (split tables so  that curd operation becomes easy)
+functional dependency (a-->b  b is dependent on a)
+keys(key attribute and non  key attribute)
+super key--one or more comb that is unique.
+candidate key--minimal super key.
+primary key-not null and unique but one primary key for one table but not like other keys.
+alternative key is candidate key at p resent it is not primary key.
+
+rest fields are non key attributes.
+
+normal forms--
+1nf- no multivalue dependency(only atomic value)
+2nf- 1nf and no partial dependency(a->c ,b->d then pk is ab(as they didn't depend) but d is depend on b not on a which is apart of pk so there is pd.so to avoid this we separete both ac and bd)prime --> non prime                  
+3nf-no  transitive dependency (a-bc,b->d then a->d so separate  abc and bd)non prime -->non prime  
+bcnf-(every functional dependency X → Y, X is the super key of the table )non prime  --> prime
+4nf-no multivalued dependency.
+-----------------------------------------------------------------------------------------------------------
+D19
+->procedures(doesn't return) outcome is query*
+->functions(it returns)outcome is result*
+----------------------------------------------------------------------------------------------------------
+D20
+--> triggrs.
+-->transactions.
+mysql/oracle--desc tablename;
+sql--exec sp_columns tablename;
+Acid properties.(atomicity-fully completed or ntg , consistency,isolation-one after another transaction,durability-must save changes)
+sql -exec sp_columns  tablename;
+savepoints are used for rollback. once commit is use all the savepoints are deleted.
+transctions cannot applied on ddl(as they are default commited)
+truncate cannot rollback but delete can rollback.
+----------------------------------------------------------------------------------------------------------
+D21
+-->jdbc
+-->sql*                                                                                                                                                                                                                                                                                
+----------------------------------------------------------------------------------------------------------
+D22
+-->Solid principles(object oriented design principles)
+S-single responsibility principle(class should has only one responsibility)
+O-open closed principle(open for extension close for modification) 
+L-liskov Substitution principle(parent class object must be replace by child class object)
+I-interface segregation principle(split interfaces according to usage)
+D-Dependency inversion principle (code should be independent on implementation but depend on interface/always create object of specification)
+-->Design patterns
+1.creational Patterns (object creation) singleton, builder design pattern...
+2.structural Patterns (composition of classes) adapter pattern...
+3.behavioural Patterns(object communicate with other objects) observer pattern...
+----------------------------------------------------------------------------------------------------------
+D23
+Mockito 
+----------------------------------------------------------------------------------------------------------
+D24
+-->module-2
+html, css, bs, js, ang(based on typescript)
+
+div and p are block commands always use new line.
+div and span are containers but span uses same line.
+null tag - doesn't required closing tag.(hr,br)
+list ol,ul, table ,anchor tag, rowspan, colspan,img
+----------------------------------------------------------------------------------------------------------
+D25
+-->bootstrap
+----------------------------------------------------------------------------------------------------------
+D26
+-->JavaScript(interpreter language)
+use as frontend scripting language -react js, angular
+backend-node js (engine that runs js like jre in java) ,express 
+Android/ios-react native
+AI/ml-TensorFlow js
+
+->ES6 version (oracle)
+js is dynamically typed.
+let-block level scope
+var- functional scope
+
+->DOM
+classes
+interface
+
+asynchronous js
+callback
+promise
+asyn
+await
+
+api call
+
+testing js
+
+mocha
+chai
+
+servlet
+-----------------------------------------------------------------------------------------------------------
+D27
+-->jsp, servlet*
+empwebapp*
+-----------------------------------------------------------------------------------------------------------
+D28
+-->call back, promise(it can be resolved or rejected),asyn fun*
+--> Js is single threaded. No multithread but we can achieve asyn comm.
+-->blocking and non blocking.
+-->json
+api vs website
+themealdb (dummy api,iframe)
+apis*
+t1-github card multiple cards, curd take pic from github.*
+api server curd.*
+-----------------------------------------------------------------------------------------------------------
+D29
+--type script
+--angular(typescript) 
+(databinding) communication b/w ts to html
+
+template(html)                        typescript
+      
+              string interpolation
+              <-------------------
+               property binding
+
+  
+              -------------------->
+               event binding
+
+
+             <------------------->
+                two way binding
+
+------------------------------------------------------------------------------------------------------------
+D30
+
+-->angular standalone,rendering(angular 18 vs angular 16)
+
+ng new hello-ust-angular-old --standlone=false to create angular older versions before 18
+------------------------------------------------------------------------------------------------------------
+D31
+-->js Testing
+
+Acceptance Test
+E2E
+Integration Test
+Unit Test
+
+js test tools are jest and mocha, chai.
+
+
+library vs framework
+
+Spring Framework
+----------------
+Spring Core Dependency Injection
+Spring Web Mvc
+Spring Rest
+Spring Data
+Spring Cloud
+Spring Security
+
+spring Framework-6
+spring Boot-3
+
+IOC Container(xml, java, annotation  are the ways to initialize the ioc )
+-bean is an object inside spring container(by default singleton nature)
+------------------------------------------------------------------------------------------------------------
+D32
+-->Spring
+Dependency injection(providing value to dependency) works for object type not for value type which belongs to class fields.
+
+(setter, constructor, field injection) -- types of dependency injection.
+
+Always use setter or constructor injection.
+Application Context manages the instantiation, configuration, and lifecycle of application beans.
+Alternative to Application Context is bean factory .
+
+
+scopes (singleton--single objs created at the beginning irrespective of need ,prototype --multiple objs and created only needed time ) 
+
+Application Context 
+@Component
+@service
+@Repository
+
+@Configuration
+@componentScan
+
+@bean(method level annotation)
+@Primary
+
+@Autowired(required=false) --by default true.
+@Qualifier
+
+@PropertySource
+@Value
+@Scope
+@Lazy
+
+-------------------------------------------------------------------------------------------------------------
+D33
+-->Spring MVC
+-->Spring Boot
+
+
+client                                                      server
+-------                                         --------------------------------
+                  /hello
+                 request                                 Handler mappings
+                                                            ^        |
+              ------------->                                |/hello  |app controller
+                                                            |        |
+                                           front controller(DS) <------      controllers
+             <-----------                   |   |  |    ^  |                     
+                         |                  |   |  |    |  |    /hello
+                response |                  |   |  |    |  |------------------>app controllers
+                         |                  |   |  |    |-----model and view----
+                         |                  |   |  |      
+                         |                  |   |  |----------------------------> view Resolver
+                         |                  |   |--------------------------------                            
+                         |                  |               hello.jsp
+                         |                  |   views
+                         |                  |-------------------->hello.jsp
+                         -----------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------
+D34
+Rest Api vs webservices
+
+--restapi (representational state transfer) always return resources/rest endpoints.
+
+--webservices(mvc) returns view.
+controller always return view.
+@ResponseBody is used to return resources in controller.
+
+Responsecodes
+DTO
+---------------------------------------------------------------------------------------------------------------
+D35
+
+JPA(java persistence api) relational database.(specification)
+ORM(object relation mapping) hibernate(implementation)- ORM framework is used to achieve orm.
+spring data jpa is top of hibernate 
+
+
+JAVA                                  Database
+--------                            -----------
+class Trainee{                      table Trainee;
+ ...
+}                                   
+ 
+1 trainee obj       equals to        1 row in table
+-----------------------------------------------------------------------------------------------------------------
+D36
+relational mapping in spring *
+121
+121 both side
+12M and M21 
+--The mappedBy attribute in a JPA relationship indicates that the foreign key is managed in the owning entity's table (e.g., DietLog), preventing JPA from creating an additional foreign key column in the non-owning entity's table (e.g., User).
+--The cascade = CascadeType.ALL setting in JPA ensures that all operations on a parent entity are automatically applied to its associated child entities, maintaining data integrity and simplifying entity management.
+--@JsonIgnore: Excludes the field from serialization and deserialization completely.(completely ignore)
+  @JsonBackReference annotation is used to manage bidirectional relationships in object graphs, particularly to avoid infinite recursion during serialization.(backward part) . It is typically used in conjunction with 
+@JsonManagedReference, which is placed on the forward part of the relationship (the side that holds the reference).(avoid recursion)
+--The orphanRemoval = true setting in JPA automatically deletes child entities from the database when they are removed from their parent's collection, preventing orphaned records and maintaining data integrity.
+--referencedColumnName is used to tell jpa that name is use as target for the foreign key, rather than the primary key (id).
+
+-----------------------------------------------------------------------------------------------------------------
+D37
+exception handling in spring
+Hateos - standard way to create apis.
+
+post,put,patch -- same
+get,delete  -- same
+t2-tm view update
+-----------------------------------------------------------------------------------------------------------------
+D38
+rest api- 1.produce api 2.consume api
+-->spring testing
+-----------------------------------------------------------------------------------------------------------------
+D39
+-->mongodb
+-----------------------------------------------------------------------------------------------------------------
+D40
+-->spring validations
+-->spring security (authentication , authorization)
+-----------------------------------------------------------------------------------------------------------------
+D41
+-->rakesh_admin
+-->pk:fqF8TFM%
+-->Aws account id:038462778264
+-->Cloud Computing
+
+-on demand resource 
+-aws ,azure, gcp
+-Region(big data centers to hold vm) and Availability Zone
+-Ip addresses ipv4(numeric comb),ipv6(alphanumeric comb)
+-DNS translate the site address to ip address
+-subnet (group of ips)5 types
+255.255.255.255 -max
+0.0.0.0-min
+127.0.0.8000-lhs
+--virtual private clouds
+--Subnets
+--Security Group
+--Inbound Rule(from where u can access vm)
+--Outbound Rule(from virtual what u can access)
+
+--private, public, hybrid clouds (cloud types)
+
+ (3 types of cs)
+-IaaS(EC2-Aws,VM-Azure,CE-Gcp)
+-PaaS(Elastic Beanstalk)
+-SaaS(Gmail, Salesforce)
+---
+ssh -i "my-ec2-key.pem" ec2-user@ec2-54-161-7-163.compute-1.amazonaws.com
+scp -i "my-ec2-key.pem" trainee-app.jar ec2-user@54.161.7.163:/home/ec2-user 
+Iaas
+-----------------------------------------------------------------------------------------------------------------
+D42
+paas
+scp -i "my-ec2-key.pem" trainee-app.jar ec2-user@34.229.133.108:/home/ec2-user 
+-->elasticbeanstalk
+-----------------------------------------------------------------------------------------------------------------
+D43
+-->RDS-MySQL, postgres, sql
+-----------------------------------------------------------------------------------------------------------------
+D44
+CICD(continuous integration and continuous deployment)
+-->Jenkins tool is used.
+-->aws code pipeline
+
+source code repo --> aws code pipeline --> aws code pipeline --> aws code deploy --> 
+--> git cicd token
+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
+------------------------------------------------------------------------------------------------------------------
+D45
+-->S3(simple storage service)
+-->SNS(simple notification service) pubsub model
+-->SQS
+------------------------------------------------------------------------------------------------------------------
+D46  (uncas501@gudri.com)
+Spring boot microservices
+-->12 factor App is used to achieve cloud-native architecture 
+1.codebase:vcs
+2.dependencies:maven
+3.configuration:app properties write out side file.
+4.Backing Services :dbs
+5.build,release,run
+6.process:application stateless
+7.port build: usage of different ports
+8.concurrency:maultiple tasks
+9.disposability:app quick start
+10.dev/prod parity: docker related
+11.logs: implement loging
+12.admin Process: admin 
+---
+monolithic application 
+-->microservices(divide the application into smaller application  and they communicate via api )
+pros: cost effective ,scalability, availability , easy test and deployment, flexibility to use diff technologies.
+cons: additional training, latency, configuration, making the architecture  fault-tolerant.(failure of 1 service leads to stop/effective another services)
+---------------------------------------------------------------------------------------------------------------------
+D47
+fault tolerance:(to prevent non transient failures)
+-->circuit breaker design pattern(if certain request fails then it goes to fallback method)
+-->retry pattern (automatically retrieve certain times and then goes to fallback method)
+----------------------------------------------------------------------------------------------------------------------
+D48
+-->feign client
+---------------------------------------------------------------------------------------------------------------------
+D49
+-->zipkin(to track api calls)
+command to run server : java -jar zipkin-server-3.4.2-exec.jar
+http://localhost:9411/zipkin/
+-->docker
+docker image -- jar file
+docker container -- image instance
+---------------------------------------------------------------------------------------------------------------------
+D50(https://github.com/ramanujds/docker-exercise)
+-->virtualization
+-->docker compose 
+-->Docker commands:
+1.docker images -->to get docker images
+2.docker pull image_name -->to pull an image
+3.docker run --name custom_name  image_name -->to run the container
+ex(mysql):docker run -p 3306(custom):3306(original) -e MYSQL_ROOT_PASSWORD=password --name mysql-container -d MySQL
+docker exec -it mysql-container bash
+bash-5.1# mysql -U root -p
+4.docker start container_name -->to start a stopped container.
+4.docker stop container_name -->to stop container.
+5.docker rm container_name -->to remove container
+6.docker rmi image_name  -->to remove image
+7.docker ps -->to get list of running containers
+8.docker ps -a -->Show the list of all containers
+9.to create docker file and push into our docker hub.(docker image creation)
+-->docker file info
+FROM openjdk:21-jdk-slim
+WORKDIR /
+ADD target/*.jar app.jar
+CMD ["java", "-jar", "app.jar"]
+
+docker build -t image_name(jar file name)
+docker tag <image_id_or_name> <username>/<repository_name>:<tag> -- to create a tag in order to push to docker.
+docker login
+docker push yourusername/my-repo:latest
+
+10.docker network create network_name -->to create network in order to communicate 2 containers and then connect the containers to this network and run.
+EX: docker network create spring-boot-db-network
+docker run --name postgres -e POSTGRES_PASSWORD=pass@word1 --network=spring-boot-db-network -d -p 5432:5432 postgres
+docker run -p 8001:8000 --name=todo-app --network=spring-boot-db-network -e POSTGRES_HOST=postgres -e POSTGRES_PORT=5432 -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=pass@word1 -d todo-app
+
+11.docker compose (one file to run all containers)
+docker-compose config -->file 
+ex:
+version: '3.7'
+services:
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass@word1
+      POSTGRES_DB: postgres
+    networks:
+      - app-network
+
+  todo-app:
+    image: todo-app
+    ports:
+     -  "8005:8000"
+    restart: always
+    depends_on:
+      -  postgres
+    networks:
+      - app-network
+    environment:
+       POSTGRES_HOST: postgres
+       POSTGRES_PORT: 5432
+       POSTGRES_DB: postgres
+       POSTGRES_USER: postgres
+       POSTGRES_PASSWORD: pass@word1
+  
+
+networks:
+  app-network:
+
+docker-compose up -->start
+docker-compose down  -->stop
+
+12.docker aws
+13.docker network ls --> to check network list
+-----
+D51
+-->microservices with docker
+Docker volumes are used for decoupling container from storage
+-->commands to kill port
+netstat -ano | findstr :8761
+taskkill /PID 11752 /F
+-------------------------------------------------------------------------------------------------------------------
+D52
+-->ECR alternative to docker hub.
+-->ECS is used to manage the docker services/images. Drawback is cloud dependent.
+-->Kubernetes (managing container that support every cloud)  cloud independent.
+-->Kubernetes is an open-source platform designed to automate the deployment, scaling, and management of containerized applications. It provides a robust way to manage containers across a cluster of machines, offering features like load balancing, self-healing, scaling, and orchestration.
+-->Kubernetes components.
+POD->it is an abstraction over docker container. container is run inside pod.
+node-it is a server.It contains multiple pods.
+deployment
+service-it is used to expose the deployment.it provide static ip address
+Ingress- used to connect .com
+secrets-used to write private info, it is also a config
+configmap-general configurations
+-------------------------------------------------------------------------------------------------------------------
+D53
+-->Spring security
+1.authorization (config way --in memory, method sec)
+2.authentication
+-->JWT(json web token) it consists of 3 parts
+  1.header(algo + token type)
+  2.payload
+  3.signature(encrypted)
+-->jwt is used for authorization
+login --authenticate
+generate token and return token
+-->filter/interceptor
+(etv-temp-repo git link)
+A CSRF token (Cross-Site Request Forgery token) is a unique, secret, and unpredictable value that is included in web forms or HTTP requests to help prevent CSRF attacks
+statefull(session id is used & csrf token used to prevent csrf) vs stateless(no sessions & csrf token , each request consider as new request & independent)
+Spring----------------Security
+securityFilterChain can be implemented in 2 ways (lambda , imperative)
+
+
+
+
+
+
+----------------
+----------------------------------------------------------------------------------------------------------------------
+D54
+-->OAuth 2.0(git hub, facebook, google)
+-->Kafka
+-->Angular
+ Databinding
+-property binding
+-String interpolation
+-event binding
+-two-way binding 
+
+Directives
+-ngfor/@for
+-
+-
+
+Forms
+-Template Driven(html based)
+-Reactive driven form(ts based) dynamic validation
+
+services and Dependency Injection
+
+Router
+Pipies
+HTTPClient
+----------------------------------------------------------------------------------------------------------------------
+D55
+wiley-c352
+-->reactive form
+----------------------------------------------------------------------------------------------------------------------
+D56
+-->routing
+
+ust-global-2023 microservices  mysmarts shop
+
+client id:Ov23li6zfq1P2NMZlEmF
+
+Client secrets:0d7daf3ba119eedfc6c4d650523c9a26f0961550
+
+----------------------------------------------------------------------------------------------------------------------
+D57
+-->child routes 
+-->pipes
+----------------------------------------------------------------------------------------------------------------------
+D58
+-->Reactive spring programing(webflux)
+(mono-->for single(Mono.just(val)),flux --> for group)
+link :https://github.com/ramanujds/blue-yonder-repo
+-->login using jwt 
+----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
