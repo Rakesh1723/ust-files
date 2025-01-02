@@ -1,0 +1,12 @@
+com\ust\traineeapp\exception\TraineeApiErrorController.class
+com\ust\traineeapp\repository\TraineeRepository.class
+com\ust\traineeapp\repository\ProjectRepository.class
+com\ust\traineeapp\dto\ErrorResponseDTO.class
+com\ust\traineeapp\service\TraineeServiceImpl.class
+com\ust\traineeapp\TraineeAppWithDataJpaApplication.class
+com\ust\traineeapp\api\TraineeController.class
+com\ust\traineeapp\model\Status.class
+com\ust\traineeapp\exception\RecordNotFoundException.class
+com\ust\traineeapp\model\Project.class
+com\ust\traineeapp\model\Trainee.class
+com\ust\traineeapp\service\TraineeService.class

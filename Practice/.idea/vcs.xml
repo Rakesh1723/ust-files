@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/exercise-bt-collections-arraylist-sortedsearch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-collections-arraylistsort" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-collections-hashmap-movie" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-exceptionhandling-trycatch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-lambdaexpression-alphabetchecker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-lambdaexpression-comparator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-lambdaexpression-consumerfunctionalinterface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-lambdaexpression-mapiteration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-lambdaexpression-predicatefunctionalinterface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-bt-streams-operations-person" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-tc-lambdaexpressions-lambdaexpressionsdemo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-td-generic-lambdaexpression-predicate" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-td-lambdaexpression-comparator-product" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-td-streams-datetime" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-td-streams-fileoperations" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/exercise-td-streams-operations-batsman" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shopping-cart-case-study" vcs="Git" />
+  </component>
+</project>
