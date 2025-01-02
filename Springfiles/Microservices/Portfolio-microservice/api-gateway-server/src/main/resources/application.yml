@@ -1,0 +1,28 @@
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: portfolio-service
+          uri:
+            lb://portfolio-service
+          predicates:
+            - Path=/api/v1/portfolio/**
+
+        - id: stocks-service
+          uri:
+            lb://stock-service
+          predicates:
+            - Path=/api/v1/stocks/**
+
+        - id: mutual-fund-service
+          uri:
+            lb://mutual-fund-service
+          predicates:
+            - Path=/api/v1/MutualFunds/**
