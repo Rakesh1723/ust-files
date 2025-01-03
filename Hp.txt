@@ -1,0 +1,548 @@
+Problem Statement 2
+Scenario: Modern life often complicates efforts to maintain a healthy lifestyle, with busy schedules 
+making it difficult to track and balance physical activity, diet, and mental health. For example, a 
+busy professional may find it challenging to keep track of their daily exercise, maintain a balanced 
+diet, and manage stress. Without a comprehensive tool to monitor these aspects, individuals may 
+struggle to identify patterns and make informed decisions about their health. Existing health apps 
+often focus on isolated aspects like diet tracking or workout logging, leaving users without a holistic 
+view of their overall well-being.
+
+chatuml
+--------
+User Story 1:User Login and Authentication
+As a user, I want to securely log in to the app using my credentials so that I can access my personalized 
+health data and ensure my information is protected.
+
+Points:XL
+
+Acceptance Criteria:
+
+Given that I am on the login page, when I enter my username and password,
+then I should be logged in to my account if the credentials are correct.
+Given that I have forgotten my password, when I click on the "Forgot Password" link,
+then I should receive instructions to reset my password via email.
+Given that I have successfully logged in, when I navigate away from the app and return,
+then I should remain logged in unless I manually log out.
+Given that I attempt to log in with incorrect credentials, when I submit my login information,
+then I should see an error message indicating that my credentials are incorrect.
+Given that I am on the login page and there is no account, when I click on the "Sign Up" option, then I should be directed to a registration page where I can create a new account.
+--
+User Story 2:Track Physical Activity
+As a busy professional, I want to easily log my daily physical activity in one place
+so that I can track my exercise without interrupting my schedule.
+
+Points:L
+
+Acceptance Criteria:
+
+Given that I am logged into the app, when I input my workout details,
+then my activity should be recorded accurately in my fitness log.
+
+When I access my workout summary, then the app should provide a graphical representation of my workout data, including metrics such as duration, calories burned, and workout type, allowing me to visualize my physical activity trends over time.
+--
+User Story 3: Monitor Dietary Intake
+As a health-conscious individual, I want to track my food intake and nutrition
+so that I can maintain a balanced diet despite my busy lifestyle.
+
+Points:L
+
+Acceptance Criteria:
+
+Given that I am using the app, when I log my meals,
+then I should see a summary of my nutritional intake for the day.
+
+
+When I view my nutritional overview, then the app should provide a graphical representation of my required proteins and dietary fibers based on my chosen plan, indicating the remaining amounts I need to consume.
+--
+User Story 4: Manage Stress
+As a user dealing with stress, I want to access mindfulness and stress management tools within the application
+so that I can improve my mental health amidst my hectic schedule.
+
+Points:L
+
+Acceptance Criteria:
+
+Given that I am on the app, when I navigate to the mental health section, then I should find resources like guided meditations, breathing exercises, and suggestions for mental health games or activities designed to reduce stress and promote mindfulness.
+
+When I access the mental health section, then the app should include a graphical representation of my mental health activities, such as time spent on meditations and games, allowing me to track my engagement and progress over time.
+--
+User Story 5: View Holistic Health Dashboard
+As a holistic health advocate, I want to see my physical activity, diet, and mental health metrics in one dashboard
+so that I can understand how these aspects impact my overall well-being.
+
+Points:XL
+
+Acceptance Criteria:
+
+Given that I am on the app's main page, when I look at my dashboard, then I should see a comprehensive summary displaying my physical activity, dietary intake, and mental health metrics in a clear and organized manner.
+
+When I view the dashboard, then it should include visual representations (such as graphs or charts) of my exercise, nutrition, and mood trends, allowing me to easily identify patterns and changes over time.
+--
+User Story 6: Set Personalized Goals
+As a motivated individual, I want to set personalized health goals for exercise, diet, and mental well-being
+so that I can track my progress and stay accountable.
+
+Points:M
+
+Acceptance Criteria:
+
+Given that I am in the goal-setting section, when I create a new goal,
+then it should be saved and displayed in my dashboard for ongoing tracking.
+
+When I edit or update my goals, then I should have the ability to do so at any time, allowing me to adjust targets based on my progress or changing priorities, with the updated information reflected immediately in my dashboard.
+--
+User Story 7: Receive Reminders and Notifications
+As a busy individual, I want to receive reminders to engage in physical activity, meal prep, or mindfulness practices
+so that I can incorporate healthy habits into my daily routine.
+
+Points:M
+
+Acceptance Criteria:
+
+Given that I have set reminders, when the time comes,
+then I should receive a notification prompting me to take action.
+
+When I set my reminders, then I should have the option to customize the frequency and timing of my notifications, allowing me to tailor them to fit my schedule and preferences.
+--
+User Story 8: Analyze Health Patterns
+As a data-driven user, I want to analyze my health data over time
+so that I can identify patterns and make informed decisions about my lifestyle.
+
+Points:XL
+
+Acceptance Criteria:
+
+Given that I am on the analytics page, when I view my health trends,
+then I should be able to see visual representations of my progress in fitness, diet, and mood.
+
+When I access the analytics section, then I should have the option to customize the timeframe for analyzing my health data, allowing me to focus on specific periods for more granular insights.
+--
+User Story 9: Integrate with Wearable Devices
+As a tech-savvy user, I want to sync my smartwatch or fitness tracker data with the application
+so that I can have a comprehensive view of my health metrics in one place.
+
+Points:L
+
+Acceptance Criteria:
+
+Given that I have connected my wearable device, when I refresh the app,
+then my latest activity and health data should be updated automatically.
+
+When I sync my wearable device, then the app should display the synced data in a clear and organized manner, allowing me to easily view metrics such as steps taken, heart rate, and calories burned.
+--
+User Story 10: Weekly Progress Reports
+As a motivated individual, I want to receive weekly progress reports summarizing my health metrics
+so that I can see how I’m doing and adjust my goals accordingly.
+
+Points:M
+
+Acceptance Criteria:
+
+Given that I have logged my data for the week, when I request a weekly report,
+then I should receive a summary of my activities, diet, and mental health trends.
+
+When I view my weekly progress report, then it should include actionable insights or suggestions based on my performance, helping me adjust my goals and improve my health habits.
+--
+User Story 11: Profile Customization
+As a user, I want to customize my profile with personal information and health preferences
+so that the app can provide tailored recommendations.
+
+Points:S
+
+Acceptance Criteria:
+
+Given that I am on my profile page, when I input my age, weight, height, and health goals,
+then these details should be saved and used to personalize my experience.
+
+When I update or edit my profile information, then the changes should be reflected immediately in the app’s recommendations and insights.
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. Users
+user_id: Primary Key
+username: Unique, VARCHAR(50)
+password_hash: VARCHAR(255)
+email: Unique, VARCHAR(100)
+age: INT
+weight: FLOAT
+height: FLOAT
+created_at: TIMESTAMP
+updated_at: TIMESTAMP
+
+2. Physical Activities
+activity_id: Primary Key
+user_id: Foreign Key (Users)
+activity_type: VARCHAR(50)
+duration: INT (in minutes)
+calories_burned: FLOAT
+date: TIMESTAMP
+created_at: TIMESTAMP
+updated_at: TIMESTAMP
+
+3. Dietary Intake
+intake_id: Primary Key
+user_id: Foreign Key (Users)
+meal_type: VARCHAR(50)
+protein: FLOAT
+dietary_fiber: FLOAT
+calories: FLOAT
+date: TIMESTAMP
+created_at: TIMESTAMP
+updated_at: TIMESTAMP
+
+4. Mental Health Activities
+activity_id: Primary Key
+user_id: Foreign Key (Users)
+activity_type: VARCHAR(50) (e.g., meditation, game)
+duration: INT (in minutes)
+date: TIMESTAMP
+created_at: TIMESTAMP
+updated_at: TIMESTAMP
+
+5. Goals
+goal_id: Primary Key
+user_id: Foreign Key (Users)
+goal_type: VARCHAR(50) (e.g., exercise, diet, mental well-being)
+target_value: FLOAT
+current_value: FLOAT
+is_completed: BOOLEAN
+created_at: TIMESTAMP
+updated_at: TIMESTAMP
+
+6. Reminders
+reminder_id: Primary Key
+user_id: Foreign Key (Users)
+reminder_type: VARCHAR(50) (e.g., exercise, meal prep, mindfulness)
+reminder_time: TIMESTAMP
+frequency: VARCHAR(50) (e.g., daily, weekly)
+created_at: TIMESTAMP
+updated_at: TIMESTAMP
+
+7. Wearable Device Data
+data_id: Primary Key
+user_id: Foreign Key (Users)
+steps_taken: INT
+heart_rate: INT
+calories_burned: FLOAT
+date: TIMESTAMP
+created_at: TIMESTAMP
+updated_at: TIMESTAMP
+
+8. Weekly Reports
+report_id: Primary Key
+user_id: Foreign Key (Users)
+week_start: DATE
+week_end: DATE
+activities_summary: TEXT
+dietary_summary: TEXT
+mental_health_summary: TEXT
+actionable_insights: TEXT
+created_at: TIMESTAMP
+
+9. User Sessions
+session_id: Primary Key
+user_id: Foreign Key (Users)
+session_token: VARCHAR(255)
+created_at: TIMESTAMP
+expires_at: TIMESTAMP
+
+10. Notifications
+notification_id: Primary Key
+user_id: Foreign Key (Users)
+notification_type: VARCHAR(50)
+message: TEXT
+is_read: BOOLEAN
+created_at: TIMESTAMP
+-----------------------------
+1 11      --t1
+
+23 6 5108 --t2t3  t4 
+
+4 7 9     --o1 o2 o3
+----------------------------
+
+-User Model 
+
+User Id
+User Name 
+Email
+Password
+Age
+Weight 
+Height 
+Gender
+profile pic
+Bmi val
+Bmi cat
+
+Underweight: BMI < 18.5
+Normal weight: BMI 18.5 - 24.9
+Overweight: BMI 25 - 29.9
+Obesity: BMI ≥ 30
+
+
+-Physical Model
+
+user id
+Workout Type
+Workout Duration
+workout intensity(l,m,h)
+Calories burned
+Step count , distance, 
+date
+
+notes
+heart rate
+
+-Diet Model
+
+user id
+Food Type 
+Quantity
+calories
+Meal Time
+hydration
+date 
+
+proteins
+fibers
+Carbohydrates
+fats
+
+
+-goal model
+----
+sudo npm i --force
+
+
+-->
+1.dto
+2.model
+3.statistics
+
+----->
+wger-project/wger
+------------------
+password controller
+package com.myportfolio.apigateway.api;
+
+import com.myportfolio.apigateway.service.ResetPasswordService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ResetPasswordController {
+
+    @Autowired
+    private ResetPasswordService passwordResetService;
+
+
+    @PostMapping("/auth/forgot-password")
+    public String forgotPassword(@RequestParam String email) {
+        return passwordResetService.forgotPassword(email);
+    }
+
+
+    @PostMapping("/auth/verify-code")
+    public String verifyCode(@RequestParam String email, @RequestParam String code) {
+        boolean isValid = passwordResetService.verifyCode(email, code);
+        if (isValid) {
+            return "Verification successful!";
+        } else {
+            return "Invalid or expired verification code!";
+        }
+    }
+    @PutMapping("auth/update-password")
+    public String updatePassword(@RequestParam String email,@RequestParam String password)
+    {
+        return passwordResetService.UpdatePassword(email,password);
+    }
+}
+
+password service
+
+package com.myportfolio.apigateway.service;
+
+import com.myportfolio.apigateway.model.UserModel;
+import com.myportfolio.apigateway.repository.UserRepository;
+import com.myportfolio.apigateway.util.EmailUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+
+@Service
+public class ResetPasswordService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private EmailUtil emailUtil;
+
+
+    public String forgotPassword(String email) {
+
+
+        UserModel user = userRepository.findByUsername(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+
+        String verificationCode = emailUtil.generateVerificationCode();
+
+
+        user.setVerificationCode(verificationCode);
+        user.setVerificationCodeExpiration(LocalDateTime.now().plusMinutes(10));
+        userRepository.save(user);
+
+
+        String subject = "Password Reset Verification Code";
+        String body = "Your verification code for password reset is: " + verificationCode;
+        emailUtil.sendEmail(email, subject, body);
+
+        return "Verification code sent to your email!";
+    }
+
+
+    public boolean verifyCode(String email, String code) {
+        UserModel user = userRepository.findByUsername(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+
+        if (user.getVerificationCode().equals(code) && LocalDateTime.now().isBefore(user.getVerificationCodeExpiration())) {
+            return true;
+        }
+
+        return false;
+    }
+    public String UpdatePassword(String email,String password){
+        UserModel user = userRepository.findByUsername(email).orElse(null);
+        if(user==null)
+        {
+            return "user not found for given email...";
+        }
+        PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
+        user.setPassword(passwordEncoder.encode(password));
+        userRepository.save(user);
+        return "Password updated successfully!...";
+    }
+}
+
+
+//package com.myportfolio.apigateway.util;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.mail.javamail.JavaMailSender;
+//import org.springframework.mail.javamail.MimeMessageHelper;
+//import org.springframework.stereotype.Component;
+//
+//import jakarta.mail.MessagingException;
+//import jakarta.mail.internet.MimeMessage;
+//import java.util.Random;
+//
+//@Component
+//public class EmailUtil {
+//    private final JavaMailSender javaMailSender;
+//
+//    @Autowired
+//    public EmailUtil(JavaMailSender javaMailSender) {
+//        this.javaMailSender = javaMailSender;
+//    }
+//    @Value("${spring.mail.username}")
+//    private String senderEmail;
+//
+//
+//    public void sendEmail(String toEmail, String subject, String body) {
+//        MimeMessage message = javaMailSender.createMimeMessage();
+//        MimeMessageHelper helper = new MimeMessageHelper(message);
+//
+//        try {
+//            helper.setFrom(senderEmail);
+//            helper.setTo(toEmail);
+//            helper.setSubject(subject);
+//            helper.setText(body);
+//            javaMailSender.send(message);
+//        } catch (MessagingException e) {
+//            e.printStackTrace();
+//            throw new RuntimeException("Failed to send email", e);
+//        }
+//    }
+//
+//
+//    public String generateVerificationCode() {
+//        Random random = new Random();
+//        int verificationCode = 100000 + random.nextInt(900000);
+//        return String.valueOf(verificationCode);
+//    }
+//}
+package com.myportfolio.apigateway.util;
+
+import jakarta.mail.*;
+import jakarta.mail.internet.*;
+import org.springframework.stereotype.Component;
+
+import java.util.Properties;
+import java.util.Random;
+@Component
+public class EmailUtil {
+
+    public static void sendEmail(String toEmail, String subject, String body) {
+        String fromEmail = "amaankhan7018@gmail.com";
+        String password = "pdwz vgsb rwig rsie";
+        String host = "smtp.gmail.com";
+        String port = "587";
+
+     
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", port);
+        properties.put("mail.smtp.auth", "true");
+
+
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.ssl.enable", "false"); 
+
+     
+        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.socketFactory.fallback", "true");
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(fromEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setSubject(subject);
+            message.setText(body);
+            Transport.send(message);
+            System.out.println("Email sent successfully!");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            System.out.println("Failed to send email.");
+            throw new RuntimeException("Failed to send email", e);
+        }
+    }
+    public String generateVerificationCode() {
+        Random random = new Random();
+        int verificationCode = 100000 + random.nextInt(900000);
+        return String.valueOf(verificationCode);
+    }
+}
+
+
+
+
+
+
+https://prezi.com/p/wkeso1zau33n/?present=1
+
+
