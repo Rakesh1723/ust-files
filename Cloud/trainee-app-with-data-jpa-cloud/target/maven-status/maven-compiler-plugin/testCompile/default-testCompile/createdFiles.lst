@@ -1,0 +1,4 @@
+com\ust\traineeapp\TraineeAppWithDataJpaApplicationTests.class
+com\ust\traineeapp\service\TraineeServiceImplTest.class
+com\ust\traineeapp\api\TraineeControllerTest.class
+com\ust\traineeapp\service\TraineeServiceImplIntegrationTest.class
